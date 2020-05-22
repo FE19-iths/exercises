@@ -11,3 +11,14 @@
 .App-link {
     color: #61dafb;
 }
+
+.App section h2 {
+    margin-top: 0.3em;
+    font-size: 1.3em;
+}
+.App section {
+    border: 1px solid gray;
+    border-radius: 1em;
+    margin: 1em;
+    padding: 0.2em 0.5em;
+}

@@ -9,7 +9,7 @@ function App() {
             <h1>Exercises</h1>
         </header>
         <main>
-            <Grandparent />
+            <section> <Grandparent /> </section>
         </main>
         </div>
     );
