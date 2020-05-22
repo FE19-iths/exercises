@@ -13,9 +13,19 @@ function App() {
         <main>
             <section> <Grandparent /> </section>
             <section>
-                <EvolvedCheckBox symbol1="❓" label1="question" symbol2="🐙" label2="octopus"> Octopus or not? </EvolvedCheckBox>
+                <EvolvedCheckBox
+                    items={[
+                        { symbol: "❓", label: 'question' },
+                        { symbol: "🐙", label: 'octopus' }
+                    ]}> Octopus or not? </EvolvedCheckBox>
                 <br/>
-                <EvolvedCheckBox symbol1="🍌" label1="banana" symbol2="🥗" label2="salad"> Monkey lunch? </EvolvedCheckBox>
+                <EvolvedCheckBox
+                    items={[
+                        { symbol: "🍌", label: 'banana' },
+                        { symbol: "🥗", label: 'salad' },
+                        { symbol: "🥦", label: 'broccoli' },
+                        { symbol: "🎂", label: 'cake' }
+                    ]}> What should we eat? </EvolvedCheckBox>
             </section>
         </main>
         </div>
