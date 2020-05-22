@@ -1,0 +1,9 @@
+.evolved-checkbox {
+    color: #4C4C4C;
+    display: inline-block;
+}
+.evolved-checkbox:hover {
+    cursor: pointer;
+    color: #000000;
+    text-decoration: underline;
+}
