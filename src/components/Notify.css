@@ -1,0 +1,21 @@
+.notify {
+    opacity: 0;
+    border: 1px solid gray;
+    background-color: lightgray;
+    border-radius: 4px;
+    padding: 0.2em 1.0em;
+    margin: 0.2em;
+    text-align: center;
+    transition: opacity 1s, transform 1s;
+    transform: translateX(-1em);
+    /* -1em åt vänster */
+}
+.notify.show {
+    opacity: 1.0;
+    transform: translateX(0);
+}
+.notify.hide {
+    /* background-color: pink; */
+    opacity: 0;
+    transform: translateX(0) translateY(1em);
+}
