@@ -12,6 +12,7 @@ function App() {
 
     const tags = [];
     for( let i=0; i<5; i++ ) {
+        // Generate 5 elements. Only one can be selected at a time.
         tags.push( <Tag key={i}
             selected={i === selectedTag}
             doSelect={() => setSelectedTag(i)} />
