@@ -2,11 +2,21 @@ import React, { useState } from 'react';
 import './App.css';
 import Grandparent from './components/Grandparent';
 import EvolvedCheckBox from './components/EvolvedCheckBox';
+import Tag from './components/Tag';
 
 
 function App() {
     const [index1, setIndex1] = useState(0);
     const [index2, setIndex2] = useState(0);
+    const [selectedTag, setSelectedTag] = useState(0);
+
+    const tags = [];
+    for( let i=0; i<5; i++ ) {
+        tags.push( <Tag key={i}
+            selected={i === selectedTag}
+            doSelect={() => setSelectedTag(i)} />
+        );
+    }
     return (
         <div className="App">
         <header className="App-header">
@@ -33,6 +43,8 @@ function App() {
                     index={index2}
                     setIndex={setIndex2}> What should we eat? </EvolvedCheckBox>
             </section>
+
+            <section> {tags} </section>
         </main>
         </div>
     );

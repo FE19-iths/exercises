@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './EvolvedCheckBox.css';
 
 const EvolvedCheckBox = ({ items, children, index, setIndex }) => {
