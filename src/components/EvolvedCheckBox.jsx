@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import './EvolvedCheckBox.css';
 
-const EvolvedCheckBox = ({ items, children }) => {
-    const [index, setIndex] = useState(0);
+const EvolvedCheckBox = ({ items, children, index, setIndex }) => {
+    // const [index, setIndex] = useState(0);
     const nextImage = () => setIndex(index < items.length - 1 ? index + 1 : 0)
-    
+
     let label  = items[index].label;
     let symbol = items[index].symbol;
 
@@ -24,3 +24,5 @@ export default EvolvedCheckBox;
 // <span role="img" aria-label="sheep">🐑</span>
 
 // [*4b] Gör så att din egen checkbox kan visa fler än två bilder.
+
+// [4c] Flytta state till parent component. Använd tekniken "lifting state up" för att skicka state mellan parent och child.
