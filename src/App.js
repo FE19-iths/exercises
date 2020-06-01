@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import './App.css';
-import Grandparent from './components/Grandparent';
-import EvolvedCheckBox from './components/EvolvedCheckBox';
-import Tag from './components/Tag';
-import Notify from './components/Notify';
+import Grandparent from './components/dag3/Grandparent';
+import EvolvedCheckBox from './components/dag3/EvolvedCheckBox';
+import Tag from './components/dag3/Tag';
+import Notify from './components/dag4/Notify';
 import HelloWorld from './components/dag6/HelloWorld';
 import Calculator from './components/dag6/Calculator';
 
