@@ -4,6 +4,8 @@ import Grandparent from './components/Grandparent';
 import EvolvedCheckBox from './components/EvolvedCheckBox';
 import Tag from './components/Tag';
 import Notify from './components/Notify';
+import HelloWorld from './components/dag6/HelloWorld';
+import Calculator from './components/dag6/Calculator';
 
 
 function App() {
@@ -25,6 +27,11 @@ function App() {
             <h1>Exercises</h1>
         </header>
         <main>
+            <section>
+                <HelloWorld />
+                <Calculator />
+            </section>
+
             <section> <Notify content="Example notification" /> </section>
             <section> <Grandparent /> </section>
             <section>
