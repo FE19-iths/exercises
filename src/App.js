@@ -6,6 +6,7 @@ import Tag from './components/dag3/Tag';
 import Notify from './components/dag4/Notify';
 import HelloWorld from './components/dag6/HelloWorld';
 import Calculator from './components/dag6/Calculator';
+import SongForm from './components/dag6/SongForm';
 
 
 function App() {
@@ -30,6 +31,9 @@ function App() {
             <section>
                 <HelloWorld />
                 <Calculator />
+            </section>
+            <section>
+                <SongForm />
             </section>
 
             <section> <Notify content="Example notification" /> </section>

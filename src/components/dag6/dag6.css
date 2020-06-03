@@ -1,3 +1,40 @@
 .calculator input {
     width: 3em;
 }
+
+
+.form-group {
+    /* border: 1px solid gray; */
+    border-radius: 4px;
+    padding: 0.7em;
+    font-family: 'Roboto';
+    font-size: 1.2em;
+    margin-bottom: 0.5em;
+}
+.form-group label {
+    display: block;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+.form-group input {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 0.9em;
+}
+input.valid {
+    border: 1px solid #5BBE36;
+    border-radius: 2px;
+}
+input.invalid {
+    border: 1px solid #DD2626;
+    border-radius: 2px;
+}
+.error {
+    color: #DD2626;
+    position: absolute;
+}
+
+
+
+/*  */
