@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import Grandparent from './components/dag3/Grandparent';
 import EvolvedCheckBox from './components/dag3/EvolvedCheckBox';
@@ -7,12 +7,23 @@ import Notify from './components/dag4/Notify';
 import HelloWorld from './components/dag6/HelloWorld';
 import Calculator from './components/dag6/Calculator';
 import SongForm from './components/dag6/SongForm';
+import SongList from './components/dag6/SongList';
 
 
 function App() {
     const [index1, setIndex1] = useState(0);
     const [index2, setIndex2] = useState(0);
     const [selectedTag, setSelectedTag] = useState(0);
+    const [songList, setSongList] = useState([]);
+
+    useEffect(() => {
+        // A more realistic app would fetch the data from an API
+        setSongList( getDefaultSongs() );
+    }, []);
+
+    const addSong = song => {
+        setSongList([ ...songList, song ]);
+    }
 
     const tags = [];
     for( let i=0; i<5; i++ ) {
@@ -33,7 +44,8 @@ function App() {
                 <Calculator />
             </section>
             <section>
-                <SongForm />
+                <SongForm addSong={addSong} />
+                <SongList songs={songList} />
             </section>
 
             <section> <Notify content="Example notification" /> </section>
@@ -62,6 +74,20 @@ function App() {
         </main>
         </div>
     );
+}
+
+function getDefaultSongs() {
+    return [
+        { title: 'Starman', artist: 'David Bowie', date: '1972' },
+        { title: 'Pippi', artist: 'Dree Low', date: '2019' },
+        { title: 'Blue', artist: 'Eiffel 65', date: '1998' },
+        { title: 'Blue', artist: 'Joni Mitchell', date: '1971' },
+        { title: 'Both sides now', artist: 'Joni Mitchell', date: '1969' },
+        { title: 'Enjoy the silence', artist: 'Depeche Mode', date: '1990' },
+        { title: 'Raindrop Prelude', artist: 'Frederic Chopin', date: '?' },
+        { title: 'Better', artist: 'Khalid', date: '2018' },
+        { title: 'Hotel California', artist: 'The Eagles', date: '1977' },
+    ];
 }
 
 export default App;

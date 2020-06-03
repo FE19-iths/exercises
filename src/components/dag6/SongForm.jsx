@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const SongForm = () => {
+const SongForm = ({ addSong }) => {
     const [title, setTitle] = useState('');
     const [artist, setArtist] = useState('');
     const [date, setDate] = useState('');
@@ -21,6 +21,10 @@ const SongForm = () => {
         : ['', ''];
 
     let formIsValid = titleTouched && artistTouched && dateTouched && (titleError === '') && (artistError === '') && (dateError === '');
+    // Alternativ:
+    // let everythingTouched = titleTouched && artistTouched && dateTouched;
+    // let noErrorMessages = (titleError === '') && (artistError === '') && (dateError === '');
+    // let formIsValid = everythingTouched && noErrorMessages;
 
     return (
         <div>
@@ -53,7 +57,10 @@ const SongForm = () => {
             </div>
 
             <div className="form-group">
-                <button disabled={!formIsValid}> Add song </button>
+                <button disabled={!formIsValid}
+                    onClick={() => addSong({ title, artist, date })}>
+                    Add song
+                </button>
             </div>
         </div>
     )
