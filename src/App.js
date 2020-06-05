@@ -8,6 +8,7 @@ import HelloWorld from './components/dag6/HelloWorld';
 import Calculator from './components/dag6/Calculator';
 import SongForm from './components/dag6/SongForm';
 import SongList from './components/dag6/SongList';
+import Input from './components/dag6/Input';
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
     const [index2, setIndex2] = useState(0);
     const [selectedTag, setSelectedTag] = useState(0);
     const [songList, setSongList] = useState([]);
+    const [weather, setWeather] = useState('');
 
     useEffect(() => {
         // A more realistic app would fetch the data from an API
@@ -47,6 +49,12 @@ function App() {
                 <SongForm addSong={addSong} />
                 <SongList songs={songList} />
             </section>
+            <section>
+                <Input value={weather} label="How is the weather?"
+                    placeholder="Sunny"
+                    doValidate={validateWeather}
+                    handleChange={e => setWeather(e.target.value)} />
+            </section>
 
             <section> <Notify content="Example notification" /> </section>
             <section> <Grandparent /> </section>
@@ -76,6 +84,13 @@ function App() {
     );
 }
 
+function validateWeather(value) {
+    if( value !== '' ) {
+        return ['valid', ''];
+    } else {
+        return ['invalid', 'Please tell me about the weather']
+    }
+}
 function getDefaultSongs() {
     return [
         { title: 'Starman', artist: 'David Bowie', date: '1972' },
