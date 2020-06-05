@@ -35,6 +35,28 @@ input.invalid {
     position: absolute;
 }
 
+.song-list {
+    padding: 0.5em;
+}
+.song-list > * {
+    background-color: #D6DAF6;
+    padding: 0.2em 1em;
+}
+.song-list > :nth-child(even) {
+    background-color: #C6CCF5;
+}
+.song-list > :hover {
+    cursor: pointer;
+    /* background-color: #8794EA; */
+    background-color: white;
+}
+.song-list input {
+    width: 8em;
+}
+
+
+
+
 
 
 /*  */

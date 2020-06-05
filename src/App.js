@@ -26,6 +26,16 @@ function App() {
     const addSong = song => {
         setSongList([ ...songList, song ]);
     }
+    const changeSong = (song, title, artist, date) => {
+        // songList[i] = {.........}  <- funkar inte i React
+        setSongList(songList.map(s => {
+            if( song.title === s.title && song.artist === s.artist ) {
+                return { title, artist, date };
+            } else {
+                return s;
+            }
+        }))
+    }
 
     const tags = [];
     for( let i=0; i<5; i++ ) {
@@ -47,7 +57,7 @@ function App() {
             </section>
             <section>
                 <SongForm addSong={addSong} />
-                <SongList songs={songList} />
+                <SongList songs={songList} changeSong={changeSong} />
             </section>
             <section>
                 <Input value={weather} label="How is the weather?"
